@@ -23,7 +23,6 @@ end
 x = reshape(X,nx*ny,1);
 y = reshape(Y,nx*ny,1);
 z = reshape(Z,nx*ny,1);
-figure
 
 G = [x(z),y(z)];
 % Calcule la matrice d'ajacence
