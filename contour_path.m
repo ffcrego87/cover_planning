@@ -9,6 +9,7 @@ BW3 = bwskel(BW3,'MinBranchLength',20);% Almost unnecessary except for some few 
 %% Find parametrized path
 Mpath = BW3;
 no=10;
+
 ymax = scale*Hsize;
 npath = sum(sum(Mpath));
 path = zeros(npath,2);
@@ -18,9 +19,7 @@ Mpath(yp,xp) = false;
 for j=2:npath
     [dy,dx] = find(Mpath(max(yp-no,1):min(yp+no,size(Mpath,1)),max(xp-no,1):min(xp+no,size(Mpath,2))));
     if isempty(dx)
-        if npath-j>0 % strange
-            warning('Forgot %d points, probably a matter of connexity of overlapping\nTry increase MinBranchLength in bwskel\n',npath-j)
-        end
+        path = path(1:(j-1),:);
         break
     end
     dy = dy-min(no+1,yp);
