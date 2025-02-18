@@ -49,9 +49,6 @@ uncovered_area_tsp = uncovered_area_comp(pos1sol,pos2sol,d,Lsize,Hsize,P,D,L);
 uncovered_area_mst = uncovered_area_comp(pos1sol_mst,pos2sol_mst,d,Lsize,Hsize,P,D,L);
 uncovered_area_hex = uncovered_area_comp(pos1sol_hex,pos2sol_hex,d,Lsize,Hsize,P,D,L);
 uncovered_area_ocp = uncovered_area_comp(pos1sol_ocp,pos2sol_ocp,d,Lsize,Hsize,P,D,L);
-% uncovered_area = length(Cellpos1)*disc^2;
-% 
-% plot(Cellpos1,Cellpos2,'k.')
 
 
 

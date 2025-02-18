@@ -25,7 +25,7 @@ Pout = simplify_pgon(Pout);
 
 [pos1sol_mst,pos2sol_mst,t_mst] = MST_plan_out(Lsize,Hsize,d,[],[],[],Pout,speed);
 [pos1sol_hex,pos2sol_hex,t_hex] = MST_plan_hex_out(Lsize,Hsize,d,[],[],[],Pout,speed);
-%[pos1sol_tsp,pos2sol_tsp,t_tsp] = TSP_plan2_out(Lsize,Hsize,d,[],[],[],Pout,speed);
+%[pos1sol_tsp,pos2sol_tsp,t_tsp] = TSP_plan_out(Lsize,Hsize,d,[],[],[],Pout,speed);
 %%
 figure
 hold on
