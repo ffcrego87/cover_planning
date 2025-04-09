@@ -15,7 +15,7 @@ nk = 0;
 npol = 1;
 speed = 0.4;
 
-RGB = imread('Maps/snazzy-image3.png');
+RGB = imread('Maps/snazzy-image.png');
 [BW,maskedRGBImage] = createMask(RGB);
 [pos1sol,pos2sol] = contour_path(size(BW,1),1,BW);
 Pout = [pos1sol' pos1sol(1); pos2sol' pos2sol(1)]';

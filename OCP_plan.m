@@ -61,8 +61,9 @@ for i=1:max(L)
     Pi1 = P(L==i,:);
     Pi = [Pi1;Pi1(1,:)];
     for j=1:length(xrange)
+        fprintf('objective i:%d j:%d\n',i,j)
         for k=1:length(yrange)
-            fprintf('objective i:%d j:%d k:%d\n',i,j,k)
+            %fprintf('objective i:%d j:%d k:%d\n',i,j,k)
             if inpolygon(xrange(j),yrange(k),Pi(:,1),Pi(:,2))
                 apf_disc(k,j) = 0;
             end
@@ -76,8 +77,9 @@ for i=1:max(L)
     Pi1 = P(L==i,:);
     Pi = [Pi1;Pi1(1,:)];
     for j=1:length(xrange_penalty)
+        fprintf('penalty i:%d j:%d\n',i,j)
         for k=1:length(yrange_penalty)
-            fprintf('penalty i:%d j:%d k:%d\n',i,j,k)
+            %fprintf('penalty i:%d j:%d k:%d\n',i,j,k)
             if inpolygon(xrange_penalty(j),yrange_penalty(k),Pi(:,1),Pi(:,2))
                 penalty_disc(k,j) = apf_fix;
             end
@@ -90,9 +92,10 @@ dt = T/N; % length of a control interval
 cost = 0;
 for i=1:length(yrange)
     for j=1:length(xrange)
+        fprintf('objective i:%d j:%d\n',i,j)
         indic = 0;
         for k=1:(N+1)
-            fprintf('objective i:%d j:%d k:%d\n',i,j,k)
+            %fprintf('objective i:%d j:%d k:%d\n',i,j,k)
             distsq=(pos1(k)-Cellpos1(i,j))^2+(pos2(k)-Cellpos2(i,j))^2;
             indic = indic+dt*gamma_distsq(distsq);
         end
@@ -104,8 +107,9 @@ end
 penalty = 0;
 for i=1:length(yrange_penalty)
     for j=1:length(xrange_penalty)
+        fprintf('penalty i:%d j:%d\n',i,j)
         for k=1:(N+1)
-            fprintf('penalty i:%d j:%d k:%d\n',i,j,k)
+            %fprintf('penalty i:%d j:%d k:%d\n',i,j,k)
             if penalty_disc(i,j)
                 distsq=(pos1(k)-xrange_penalty(j))^2+(pos2(k)-yrange_penalty(i))^2;
                 penalty = penalty + exp(-(distsq-(d/8)^2));

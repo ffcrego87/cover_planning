@@ -64,8 +64,8 @@ Gr = graph(Adj);
 T = minspantree(Gr);
 
 %%
-fhndl = figure(2);
-set(2,'visible','off');
+fhndl = figure();
+set(fhndl,'visible','off');
 axis off
 hold on
 for j=1:height(T.Edges)
