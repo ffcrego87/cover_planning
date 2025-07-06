@@ -29,7 +29,7 @@ compTime_mat = zeros(nSamples, 4);
 surf_mat     = zeros(nSamples, 4);  % New: Surface coverage metric
 
 %% Sampling Loop
-for sample = []
+for sample = N
     fprintf('Running sample %d...\n', sample);
     
     % Generate polygons

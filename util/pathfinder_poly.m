@@ -34,6 +34,11 @@ initial_combined_nodes(:,3) = Inf*ones(size(initial_combined_nodes,1),1);
 %Identify nodes visible from starting point
 visible_nodes_ID = zeros(1,size(initial_combined_nodes,1));
 
+%% Shrinks by a very small amount the obstacles
+for i=1:max(L)
+    P(L==i,:) = mean(P(L==i,:),1)+0.999*(P(L==i,:)-mean(P(L==i,:),1));
+end
+
 %% Create a library listing the visible neighbours of all of the nodes and their distances with respect to the reference nodes 
 
 %Initialize library as an empty three dimensional array
